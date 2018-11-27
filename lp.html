@@ -6,48 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>老婆生成器</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .line {
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>老婆生成器</h1>
-    <div>
-        <button id="btn">一键生成老婆</button>
-    </div>
-    <div>
-        身高：
-        <span id="height"></span>
-    </div>
-    <div>
-        体重：
-        <span id="weight"></span>
-    </div>
-    <div>
-        胸围：
-        <span id="size"></span>
-    </div>
-    <div>
-        肤色：
-        <span id="face"></span>
-    </div>
-    <div>
-        发色：
-        <span id="hair"></span>
-    </div>
-    <div>
-        瞳色：
-        <span id="eye"></span>
-    </div>
-    <div>
-        属性：
-        <span id="property"></span>
-    </div>
-    <div>
-        性格：
-        <span id="character"></span>
-    </div>
-    <div>
-        超能力：
-        <span id="power"></span>
+    <div class="container">
+        <h1>老婆生成器</h1>
+        <div>
+            <button id="btn" class="btn btn-primary">一键生成老婆</button>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">身高：</span>
+            <span class="col-md-8 " id="height"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">体重：</span>
+            <span class="col-md-8 " id="weight"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">胸围：</span>
+            <span class="col-md-8 " id="size"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">肤色：</span>
+            <span class="col-md-8 " id="face"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">发色：</span>
+            <span class="col-md-8 " id="hair"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">瞳色：</span>
+            <span class="col-md-8 " id="eye"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">属性：</span>
+            <span class="col-md-8 " id="property"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">性格：</span>
+            <span class="col-md-8 " id="character"></span>
+        </div>
+        <div class="line">
+            <span class="col-md-4 ">超能力：</span>
+            <span class="col-md-8 " id="power"></span>
+        </div>
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -56,11 +67,11 @@
 
         // let faces = ["浅黄", "屎黄", "黑色", "褐色", "黄色", "白色"];
 
-        let propertys = ["萝莉", "伪娘","兄贵","外星人", "兽人","机器人","女王", "御姐", "废材", "女装大佬","龙女仆", "元气娘", "宅", "兽耳", "眼镜娘", "小恶魔", "软妹子", "柴刀系", "病弱系", "妹系", "大叔系", "傲娇系", "女仆", "犬齿", "巫女", "青梅竹马", "邻家女", "魔法少女"];
+        let propertys = ["萝莉", "伪娘", "兄贵", "外星人", "兽人", "机器人", "女王", "御姐", "废材", "女装大佬", "龙女仆", "元气娘", "宅", "兽耳", "眼镜娘", "小恶魔", "软妹子", "柴刀系", "病弱系", "妹系", "大叔系", "傲娇系", "女仆", "犬齿", "巫女", "青梅竹马", "邻家女", "魔法少女"];
 
         let characters = ["毒舌", "鬼畜", "三无", "傲娇", "萌", "天然呆", "天然黑", "腹黑", "电波", "元气", "病娇"];
 
-       let powers = ["千里眼", "心灵感应", "念力", "一定会被骗", "酸性眼泪", "在黑夜中隐形", "远程遥控遥控器", "和水果交流", "垃圾探测者", "单次召唤台灯", "吸引子弹", "瞬间脱发", "体毛快速生长", "超级慢动作", "复活臭虫", "超速衰老", "写隐形字", "1秒超级力量", "变身成笔记本电脑", "勾引帽子", "掉色", "瞪谁谁怀孕", "只能在飞机中飞行", "将乘坐的电梯变成楼梯", "让时间静止(包括自己)", "预知未来后马上忘记", "摔倒时慢动作", "自动修正眼镜位置", "瞬间将自己钱包里的钱变没有", "给自己打电话", "只要一进洗手间就能把里面的所有手纸变没", "开车按喇叭的时候瞬间加速", "一遇到太阳就变成雪人", "吸引蚊子", "一个人坐电梯的时候瞬间把每一层都变亮 "];
+        let powers = ["千里眼", "心灵感应", "念力", "一定会被骗", "酸性眼泪", "在黑夜中隐形", "远程遥控遥控器", "和水果交流", "垃圾探测者", "单次召唤台灯", "吸引子弹", "瞬间脱发", "体毛快速生长", "超级慢动作", "复活臭虫", "超速衰老", "写隐形字", "1秒超级力量", "变身成笔记本电脑", "勾引帽子", "掉色", "瞪谁谁怀孕", "只能在飞机中飞行", "将乘坐的电梯变成楼梯", "让时间静止(包括自己)", "预知未来后马上忘记", "摔倒时慢动作", "自动修正眼镜位置", "瞬间将自己钱包里的钱变没有", "给自己打电话", "只要一进洗手间就能把里面的所有手纸变没", "开车按喇叭的时候瞬间加速", "一遇到太阳就变成雪人", "吸引蚊子", "一个人坐电梯的时候瞬间把每一层都变亮 "];
         $("#btn").click(() => {
             let num = {};
             num.get = function(begin, end) {
