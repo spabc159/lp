@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>老婆生成器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>老婆生成器</h1>
+    <div>
+        <button id="btn">一键生成老婆</button>
+    </div>
+    <div>
+        身高：
+        <span id="height"></span>
+    </div>
+    <div>
+        体重：
+        <span id="weight"></span>
+    </div>
+    <div>
+        胸围：
+        <span id="size"></span>
+    </div>
+    <div>
+        肤色：
+        <span id="face"></span>
+    </div>
+    <div>
+        发色：
+        <span id="hair"></span>
+    </div>
+    <div>
+        瞳色：
+        <span id="eye"></span>
+    </div>
+    <div>
+        属性：
+        <span id="property"></span>
+    </div>
+    <div>
+        性格：
+        <span id="character"></span>
+    </div>
+    <div>
+        超能力：
+        <span id="power"></span>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        let sizes = ["A", "B", "C", "D", "E", "F", "G"];
+
+        // let faces = ["浅黄", "屎黄", "黑色", "褐色", "黄色", "白色"];
+
+        let propertys = ["萝莉", "伪娘", "女王", "御姐", "废材", "龙女仆", "元气娘", "宅", "兽耳", "眼镜娘", "小恶魔", "软妹子", "柴刀系", "病弱系", "妹系", "大叔系", "傲娇系", "女仆", "犬齿", "巫女", "青梅竹马", "邻家女", "魔法少女"];
+
+        let characters = ["毒舌", "鬼畜", "三无", "傲娇", "萌", "天然呆", "天然黑", "腹黑", "电波", "元气", "病娇"];
+
+        let powers = ["千里眼", "心灵感应", "念力", "一定会被骗", "酸性眼泪", "在黑夜中隐形", "远程遥控遥控器", "和水果交流", "垃圾探测者", "单次召唤台灯", "吸引子弹", "瞬间脱发", "体毛快速生长", "超级慢动作", "复活臭虫", "超速衰老", "写隐形字", "1秒超级力量", "变身成笔记本电脑", "勾引帽子", "掉色", "瞪谁谁怀孕"];
+
+        $("#btn").click(() => {
+            let num = {};
+            num.get = function(begin, end) {
+                return Math.floor(Math.random() * (end - begin)) + begin;
+            }
+            let height = num.get(100, 200);
+            let weight = num.get(30, 80);
+            $("#height").html(height + "cm");
+            $("#weight").html(weight + "kg");
+
+
+            let hairColor = "#";
+            for (let i = 0; i < 6; i++) {
+                hairColor += (Math.random() * 16 | 0).toString(16);
+            }
+            let eyeColor = "#";
+            for (let i = 0; i < 6; i++) {
+                eyeColor += (Math.random() * 16 | 0).toString(16);
+            }
+
+            let faceColor = "#";
+            for (let i = 0; i < 6; i++) {
+                faceColor += (Math.random() * 16 | 0).toString(16);
+            }
+
+            $("#hair").html(hairColor).css("background-color", hairColor);
+
+            $("#face").html(faceColor).css("background-color", faceColor);
+
+            $("#eye").html(eyeColor).css("background-color", eyeColor);
+
+            let size = sizes[Math.floor(Math.random() * sizes.length)];
+
+            // let face = faces[Math.floor(Math.random() * faces.length)];
+
+            let power = powers[Math.floor(Math.random() * powers.length)];
+
+            let property = propertys[Math.floor(Math.random() * propertys.length)];
+
+            let character = characters[Math.floor(Math.random() * characters.length)];
+
+            $("#size").html(size);
+            // $("#face").html(face);
+            $("#power").html(power);
+            $("#property").html(property);
+            $("#character").html(character);
+
+        })
+    </script>
+</body>
+
+</html>
